@@ -16,4 +16,4 @@ jobs:
         with:
           gpg-key: ${{ secrets.JOHN_GPG_KEY }}
       - name: Check output
-        run: echo ${{ steps.secrets.COCA_COLA_RECIPE }}
+        run: echo ${{ steps.secrets.outputs.COCA_COLA_RECIPE }}
