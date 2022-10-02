@@ -6,11 +6,14 @@ on:
       - main
 
 jobs:
-  reveal:
-    name: Reveal
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: The Guild Secrets
+      - name: Reveal The Guild Secrets
+        id: revealed
         uses: the-guild-org/secrets@main
         with:
           gpg-key: ${{ secrets.JOHN_GPG_KEY }}
+      - name: Check output
+        run: echo ${{ revealed.secrets.COCA_COLA_RECIPE }}
