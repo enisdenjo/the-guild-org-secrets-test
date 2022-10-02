@@ -1,0 +1,16 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  reveal:
+    name: Reveal
+    runs-on: ubuntu-latest
+    steps:
+      - name: The Guild Secrets
+        uses: the-guild-org/secrets@main
+        with:
+          gpg-key: ${{ secrets.JOHN_GPG_KEY }}
